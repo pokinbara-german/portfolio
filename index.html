@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Portfolio</title>
+
+	<!-- Bulma -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+	<!-- PhotoSwipe (styles only; the scripts are loaded in js/main.js) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<!-- Scroll progress bar -->
+	<div class="scroll-progress" role="progressbar" aria-hidden="true">
+		<div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+	</div>
+
+	<!-- Navbar -->
+	<nav class="navbar is-fixed-top" aria-label="main navigation">
+		<div class="container">
+			<div class="navbar-brand">
+				<a class="navbar-item has-text-weight-bold" href="#top" data-i18n="site.name"></a>
+				<a class="navbar-burger" role="button" aria-expanded="false" data-target="main-menu" data-i18n-aria="nav.menu">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
+			</div>
+
+			<div class="navbar-menu" id="main-menu">
+				<div class="navbar-end">
+					<a class="navbar-item" href="#projects" data-i18n="nav.projects"></a>
+					<div class="navbar-item">
+						<div class="buttons">
+							<!-- Shows the language you will switch to -->
+							<button class="button is-light" id="lang-toggle" type="button" data-i18n-aria="lang.toggle"></button>
+							<button class="button is-light" id="theme-toggle" type="button" data-i18n-aria="theme.toggle">
+								<span class="theme-icon-light" aria-hidden="true">&#9728;</span>
+								<span class="theme-icon-dark" aria-hidden="true">&#9790;</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Hero -->
+	<header class="hero is-medium page-hero" id="top">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title is-1" data-i18n="hero.title"></h1>
+				<p class="subtitle is-4" data-i18n="hero.subtitle"></p>
+				<a class="button is-light is-medium" href="#projects" data-i18n="hero.button"></a>
+			</div>
+		</div>
+	</header>
+
+	<!-- Projects -->
+	<main id="projects">
+
+		<!-- Project 1: image left, text right -->
+		<section class="section project">
+			<div class="container">
+				<div class="columns is-vcentered is-8">
+					<div class="column is-7">
+						<div class="project-gallery">
+							<a class="project-image-link" href="" data-pswp-width="1600" data-pswp-height="1000" data-placeholder-hue="210" data-placeholder-label="1.1">
+								<img src="" alt="" data-i18n-alt="project1.alt">
+								<span class="photo-badge"></span>
+							</a>
+							<a class="is-hidden" href="" data-pswp-width="1600" data-pswp-height="1000" data-placeholder-hue="210" data-placeholder-label="1.2">
+								<img src="" alt="" data-i18n-alt="project1.alt">
+							</a>
+							<a class="is-hidden" href="" data-pswp-width="1600" data-pswp-height="1000" data-placeholder-hue="210" data-placeholder-label="1.3">
+								<img src="" alt="" data-i18n-alt="project1.alt">
+							</a>
+						</div>
+					</div>
+					<div class="column is-5">
+						<h2 class="title is-3" data-i18n="project1.title"></h2>
+						<p class="content is-medium" data-i18n="project1.description"></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Project 2: image right, text left (reversed by CSS) -->
+		<section class="section project">
+			<div class="container">
+				<div class="columns is-vcentered is-8">
+					<div class="column is-7">
+						<div class="project-gallery">
+							<a class="project-image-link" href="assets/images/profile_page_overview.png" data-pswp-width="1424" data-pswp-height="742">
+								<img src="assets/images/profile_page_overview.png" alt="" data-i18n-alt="project2.alt">
+								<span class="photo-badge"></span>
+							</a>
+							<a class="is-hidden" href="assets/images/profile_edit.png" data-pswp-width="1424" data-pswp-height="742">
+								<img src="assets/images/profile_edit.png" alt="" data-i18n-alt="project2.alt">
+							</a>
+							<a class="is-hidden" href="assets/images/login_page.png" data-pswp-width="1424" data-pswp-height="742">
+								<img src="assets/images/login_page.png" alt="" data-i18n-alt="project2.alt">
+							</a>
+							<a class="is-hidden" href="assets/images/users_page.png" data-pswp-width="1424" data-pswp-height="742">
+								<img src="assets/images/login_page.png" alt="" data-i18n-alt="project2.alt">
+							</a>
+							<a class="is-hidden" href="assets/images/post_creation.png" data-pswp-width="928" data-pswp-height="483">
+								<img src="assets/images/login_page.png" alt="" data-i18n-alt="project2.alt">
+							</a>
+						</div>
+					</div>
+					<div class="column is-5">
+						<h2 class="title is-3" data-i18n="project2.title"></h2>
+						<p class="content is-medium" data-i18n="project2.description"></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Project 3: image left, text right -->
+		<section class="section project">
+			<div class="container">
+				<div class="columns is-vcentered is-8">
+					<div class="column is-7">
+						<div class="project-gallery">
+							<a class="project-image-link" href="" data-pswp-width="1600" data-pswp-height="1000" data-placeholder-hue="20" data-placeholder-label="3.1">
+								<img src="" alt="" data-i18n-alt="project3.alt">
+								<span class="photo-badge"></span>
+							</a>
+							<a class="is-hidden" href="" data-pswp-width="1600" data-pswp-height="1000" data-placeholder-hue="20" data-placeholder-label="3.2">
+								<img src="" alt="" data-i18n-alt="project3.alt">
+							</a>
+							<a class="is-hidden" href="" data-pswp-width="1600" data-pswp-height="1000" data-placeholder-hue="20" data-placeholder-label="3.3">
+								<img src="" alt="" data-i18n-alt="project3.alt">
+							</a>
+						</div>
+					</div>
+					<div class="column is-5">
+						<h2 class="title is-3" data-i18n="project3.title"></h2>
+						<p class="content is-medium" data-i18n="project3.description"></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<!-- Footer -->
+	<footer class="footer has-text-centered">
+		<p>&copy; <span id="year"></span> <span data-i18n="site.name"></span></p>
+	</footer>
+
+	<!-- Translations must be loaded before main.js -->
+	<script src="js/i18n/en.js"></script>
+	<script src="js/i18n/ru.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

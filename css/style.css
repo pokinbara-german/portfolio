@@ -1,0 +1,119 @@
+/* Smooth scrolling to anchors, offset by the fixed navbar height */
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 3.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+/* Scroll progress bar, sits above the fixed navbar */
+.scroll-progress {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 40;
+	height: 4px;
+}
+
+.scroll-progress-bar {
+	width: 100%;
+	height: 100%;
+	background-color: var(--bulma-link);
+	transform: scaleX(0);
+	transform-origin: left;
+}
+
+/* Hero */
+.page-hero {
+	color: #fff;
+	background: linear-gradient(135deg, #2c3e8f 0%, #1b7f8c 100%);
+}
+
+.page-hero .title,
+.page-hero .subtitle {
+	color: #fff;
+}
+
+/* Project sections: alternating background, taken from Bulma theme variables */
+.project {
+	padding-top: 4.5rem;
+	padding-bottom: 4.5rem;
+	background-color: var(--bulma-scheme-main);
+}
+
+.project:nth-child(even) {
+	background-color: var(--bulma-scheme-main-bis);
+}
+
+/* Alternate the sides: text on the left in even projects (desktop only) */
+@media screen and (min-width: 769px) {
+	.project:nth-child(even) .columns {
+		flex-direction: row-reverse;
+	}
+}
+
+/* Main screenshot that opens the gallery */
+.project-image-link {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.project-image-link img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.project-image-link:hover img,
+.project-image-link:focus-visible img {
+	transform: scale(1.03);
+}
+
+.project-image-link:focus-visible {
+	outline: 3px solid var(--bulma-link);
+	outline-offset: 3px;
+}
+
+/* "+2 photos" badge */
+.photo-badge {
+	position: absolute;
+	right: 0.75rem;
+	bottom: 0.75rem;
+	padding: 0.25rem 0.75rem;
+	border-radius: 999px;
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pswp__img {
+	border-radius: 12px;
+}
+
+.photo-badge:empty {
+	display: none;
+}
+
+/* Theme toggle: show the sun in the dark theme and the moon in the light one */
+.theme-icon-light {
+	display: none;
+}
+
+[data-theme="dark"] .theme-icon-light {
+	display: inline;
+}
+
+[data-theme="dark"] .theme-icon-dark {
+	display: none;
+}
