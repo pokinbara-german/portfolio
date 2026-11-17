@@ -17,7 +17,8 @@ window.I18N.en = {
 	'hero.button': 'View projects',
 
 	'project1.title': 'Pattern tester',
-	'project1.description': 'Description 1',
+	'project1.description': 'This is a simple tool for testing tile pattern textures.\nIt works directly in your browser and doesn\'t require any additional plugins.\nYou can change the number of tiles, rotate and scale them to see if everything looks OK or if you missed a pixel somewhere.',
+	'project1.link': 'Live demo',
 	'project1.alt': 'Pattern tester screenshot',
 
 	'project2.title': 'React social network',

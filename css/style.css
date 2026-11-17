@@ -44,6 +44,9 @@ html {
 	padding-top: 4.5rem;
 	padding-bottom: 4.5rem;
 	background-color: var(--bulma-scheme-main);
+	.content {
+		white-space: pre-line;
+	}
 }
 
 .project:nth-child(even) {

@@ -17,7 +17,8 @@ window.I18N.ru = {
 	'hero.button': 'Смотреть проекты',
 
 	'project1.title': 'Pattern tester',
-	'project1.description': 'Описание 1',
+	'project1.description': 'Это простой инструмент для тестирования повторяющихся текстур.\nРаботает прямо в браузере, не требует никаких библиотек.\nПозволяет изменять колличество тайлов, их размер и поворот, чтобы понять, всё в порядке или где-то пропущен пиксель.',
+	'project1.link': 'Попробовать',
 	'project1.alt': 'Скриншот Pattern tester',
 
 	'project2.title': 'React social network',
