@@ -12,8 +12,8 @@ window.I18N.en = {
 	'lang.toggle': 'Switch to Russian',
 	'theme.toggle': 'Toggle dark theme',
 
-	'hero.title': 'Selected projects',
-	'hero.subtitle': 'Interfaces, tools and experiments',
+	'hero.title': 'I\'m really sorry, but it hasn\'t finished yet.',
+	'hero.subtitle': 'You can take a look at the projects that are available right now.',
 	'hero.button': 'View projects',
 
 	'project1.title': 'Pattern tester',

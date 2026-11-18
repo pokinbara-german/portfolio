@@ -37,6 +37,7 @@ html {
 .page-hero .title,
 .page-hero .subtitle {
 	color: #fff;
+	white-space: pre-line;
 }
 
 /* Project sections: alternating background, taken from Bulma theme variables */
