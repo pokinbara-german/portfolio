@@ -22,11 +22,13 @@ window.I18N.ru = {
 	'project1.alt': 'Скриншот Pattern tester',
 
 	'project2.title': 'React social network',
-	'project2.description': 'Описание 2',
+	'project2.description': 'Учебный проект React/TypeScript.\nРеализованы профили пользователей, поиск по ним, подписка на пользователей, личные сообщения, чат на WebSockets.\nБэкенд был предоставлен владельцами курса и сейчас отключен.',
+	'project2.link': 'Попробовать',
 	'project2.alt': 'Скриншот Social Network',
 
 	'project3.title': 'Проект 3',
 	'project3.description': 'Описание 3',
+	'project3.link': 'Попробовать',
 	'project3.alt': 'Скриншот Проекта 3',
 
 	// {count} заменяется на число дополнительных фото

@@ -22,11 +22,13 @@ window.I18N.en = {
 	'project1.alt': 'Pattern tester screenshot',
 
 	'project2.title': 'React social network',
-	'project2.description': 'Description 2',
+	'project2.description': 'React/TypeScript learning project.\nImplemented user profiles, user search, following, private messaging, and real-time chat using WebSockets.\nThe backend was provided by the course and is no longer available.',
+	'project2.link': 'Live demo',
 	'project2.alt': 'Social Network screenshot',
 
 	'project3.title': 'Project 3',
 	'project3.description': 'Description 3',
+	'project3.link': 'Live demo',
 	'project3.alt': 'Project 3 screenshot',
 
 	// {count} is replaced with the number of extra photos
