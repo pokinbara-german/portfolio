@@ -31,6 +31,11 @@ window.I18N.ru = {
 	'project3.link': 'Попробовать',
 	'project3.alt': 'Скриншот Проекта 3',
 
+	'project6.title': 'Проект 6',
+	'project6.description': 'Описание 6',
+	'project6.link': 'Попробовать',
+	'project6.alt': 'Скриншот Проекта 6',
+
 	// {count} заменяется на число дополнительных фото
 	'gallery.more': '+{count} фото',
 

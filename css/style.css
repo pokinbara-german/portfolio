@@ -48,6 +48,9 @@ html {
 	.content {
 		white-space: pre-line;
 	}
+	.project-tags {
+		margin-top: 1rem;
+	}
 }
 
 .project:nth-child(even) {

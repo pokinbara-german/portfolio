@@ -31,6 +31,11 @@ window.I18N.en = {
 	'project3.link': 'Live demo',
 	'project3.alt': 'Project 3 screenshot',
 
+	'project6.title': 'Project 6',
+	'project6.description': 'Description 6',
+	'project6.link': 'Live demo',
+	'project6.alt': 'Project 6 screenshot',
+
 	// {count} is replaced with the number of extra photos
 	'gallery.more': '+{count} photos',
 

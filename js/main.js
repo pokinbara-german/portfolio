@@ -156,46 +156,12 @@
 		update();
 	}
 
-	// ---------- Placeholder screenshots ----------
-	// Replace the href and src of the links in index.html with real
-	// screenshots and remove the data-placeholder-* attributes.
-
-	function createPlaceholder(hue, label) {
-		var svg =
-			'<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">' +
-				'<defs>' +
-					'<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
-						'<stop offset="0" stop-color="hsl(' + hue + ', 60%, 45%)"/>' +
-						'<stop offset="1" stop-color="hsl(' + ((+hue + 40) % 360) + ', 60%, 28%)"/>' +
-					'</linearGradient>' +
-				'</defs>' +
-				'<rect width="1600" height="1000" fill="url(#g)"/>' +
-				'<rect x="120" y="120" width="1360" height="760" rx="24" fill="rgba(255,255,255,0.14)"/>' +
-				'<text x="800" y="540" font-family="sans-serif" font-size="160" font-weight="700" ' +
-					'fill="#fff" text-anchor="middle">' + label + '</text>' +
-			'</svg>';
-
-		return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
-	}
-
-	function initPlaceholders() {
-		document.querySelectorAll('[data-placeholder-hue]').forEach(function (link) {
-			var url = createPlaceholder(
-				link.getAttribute('data-placeholder-hue'),
-				link.getAttribute('data-placeholder-label')
-			);
-
-			link.href = url;
-			link.querySelector('img').src = url;
-		});
-	}
-
-	// ---------- PhotoSwipe gallery ----------
-	// Every .project-gallery is a separate gallery. Only the first link is
-	// visible, the other ones are hidden but still open in the lightbox.
-	// PhotoSwipe is an ES module, so it is loaded with dynamic import(),
-	// which also works when index.html is opened from the disk.
-
+	/**
+	 * Every .project-gallery is a separate gallery. Only the first link is
+	 * visible, the other ones are hidden but still open in the lightbox.
+	 * PhotoSwipe is an ES module, so it is loaded with dynamic import(),
+	 * which also works when index.html is opened from the disk.
+	 */
 	function initGallery() {
 		import(PHOTOSWIPE_URL + 'photoswipe-lightbox.esm.min.js')
 			.then(function (module) {
@@ -229,7 +195,6 @@
 	document.getElementById('year').textContent = new Date().getFullYear();
 
 	initTheme();
-	initPlaceholders();
 	initLanguage();
 	initBurger();
 	initGallery();
