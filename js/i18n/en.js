@@ -17,18 +17,18 @@ window.I18N.en = {
 	'hero.button': 'View projects',
 
 	'project1.title': 'Pattern tester',
-	'project1.description': 'This is a simple tool for testing tile pattern textures.\nIt works directly in your browser and doesn\'t require any additional plugins.\nYou can change the number of tiles, rotate and scale them to see if everything looks OK or if you missed a pixel somewhere.',
+	'project1.description': 'This is a simple tool for testing tile pattern textures.It works directly in your browser and doesn\'t require any additional plugins.\n\nYou can change the number of tiles, rotate and scale them to see if everything looks OK or if you missed a pixel somewhere.',
 	'project1.link': 'Live demo',
 	'project1.alt': 'Pattern tester screenshot',
 
 	'project2.title': 'React social network',
-	'project2.description': 'React/TypeScript learning project.\nImplemented user profiles, user search, following, private messaging, and real-time chat using WebSockets.\nThe backend was provided by the course and is no longer available.',
+	'project2.description': 'React/TypeScript learning project.\nImplemented user profiles, user search, following, private messaging, and real-time chat using WebSockets.\n\nThe backend was provided by the course and is no longer available.',
 	'project2.link': 'Live demo',
 	'project2.alt': 'Social Network screenshot',
 
-	'project3.title': 'Project 3',
-	'project3.description': 'Description 3',
-	'project3.link': 'Live demo',
+	'project3.title': 'UMI site template "1C-Easy Webinar"',
+	'project3.description': 'Landing page template for UMI CMS, developed for its SaaS platform. The design was provided by 1C partners.\n\nAll blocks and images can be edited using the EiP (Edit in Place) visual editor.\nThe email template sent to users after they submit a form can also be edited using EiP, making it easier for beginners to work with.\n\nThe templates are built using XSLT. Phone and email links are dynamically updated whenever the corresponding form field values change, using MutationObserver.',
+	'project3.link': 'Demo site',
 	'project3.alt': 'Project 3 screenshot',
 
 	'project6.title': 'NID-Report',
