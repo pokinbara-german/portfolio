@@ -104,6 +104,24 @@ html {
 	background-color: rgba(0, 0, 0, 0.7);
 }
 
+.tech-cloud {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	background-color: var(--bulma-scheme-main-bis);
+}
+
+.tech-cloud-tags {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.tech-cloud-tags .tags {
+	margin-bottom: 0;
+}
+
 .pswp__img {
 	border-radius: 12px;
 }

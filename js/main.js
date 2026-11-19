@@ -190,6 +190,73 @@
 			});
 	}
 
+	/**
+	 * Collects the tags from all projects and builds one cloud.
+	 * The more projects use a technology, the bigger its tag is.
+	 */
+	function initTechCloud() {
+		var section = document.getElementById('tech-cloud');
+		var container = document.getElementById('tech-cloud-tags');
+		var counts = {};
+
+		document.querySelectorAll('.project-tags .tag').forEach(function (tag) {
+			var name = tag.textContent.trim();
+			var key = name.toLowerCase();
+
+			if (!name) {
+				return;
+			}
+
+			if (!counts[key]) {
+				counts[key] = { name: name, count: 0 };
+			}
+
+			counts[key].count += 1;
+		});
+
+		var items = Object.keys(counts).map(function (key) {
+			return counts[key];
+		});
+
+		if (!items.length) {
+			return;
+		}
+
+		// Most popular first, then alphabetically
+		items.sort(function (a, b) {
+			return b.count - a.count || a.name.localeCompare(b.name);
+		});
+
+		var max = items[0].count;
+
+		items.forEach(function (item) {
+			var group = document.createElement('div');
+			var label = document.createElement('span');
+			var number = document.createElement('span');
+			var size = 'is-normal';
+
+			if (max > 1 && item.count === max) {
+				size = 'is-large';
+			} else if (item.count > 1) {
+				size = 'is-medium';
+			}
+
+			group.className = 'tags has-addons';
+
+			label.className = 'tag is-link is-light ' + size;
+			label.textContent = item.name;
+
+			number.className = 'tag is-link ' + size;
+			number.textContent = item.count;
+
+			group.appendChild(label);
+			group.appendChild(number);
+			container.appendChild(group);
+		});
+
+		section.hidden = false;
+	}
+
 	// ---------- Start ----------
 
 	document.getElementById('year').textContent = new Date().getFullYear();
@@ -199,4 +266,5 @@
 	initBurger();
 	initGallery();
 	initScrollProgress();
+	initTechCloud();
 })();
