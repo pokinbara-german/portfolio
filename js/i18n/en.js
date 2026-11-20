@@ -32,7 +32,7 @@ window.I18N.en = {
 	'project3.alt': 'Project 3 screenshot',
 
 	'project6.title': 'NID-Report',
-	'project6.description': 'Description 6',
+	'project6.description': 'Electronic reporting system for internal use at Herzen State Pedagogical University.\nThe system allowed users to create new report forms and generate reports using a built-in form builder. The workload of calculating metrics was distributed across individual records in separate data cards.\n\nThe system was available both as a web application and as a desktop application.',
 	'project6.link': 'Live demo',
 	'project6.alt': 'NID-Report screenshot',
 
