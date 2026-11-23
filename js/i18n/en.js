@@ -4,6 +4,7 @@ window.I18N = window.I18N || {};
 window.I18N.en = {
 	'meta.title': 'Portfolio',
 	'site.name': 'Portfolio',
+	'owner.name': 'German Pokinbara',
 
 	'nav.menu': 'Toggle menu',
 	'nav.projects': 'Projects',

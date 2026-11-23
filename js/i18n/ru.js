@@ -4,6 +4,7 @@ window.I18N = window.I18N || {};
 window.I18N.ru = {
 	'meta.title': 'Портфолио',
 	'site.name': 'Портфолио',
+	'owner.name': 'Герман Покинбара',
 
 	'nav.menu': 'Открыть меню',
 	'nav.projects': 'Проекты',
