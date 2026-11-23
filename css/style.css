@@ -28,6 +28,71 @@ html {
 	transform-origin: left;
 }
 
+/* Theme switch */
+.theme-switch {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.theme-switch input {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.theme-switch-track {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 3.5rem;
+	height: 2rem;
+	padding: 0 0.4rem;
+	border: 1px solid var(--bulma-border);
+	border-radius: 999px;
+	font-size: 0.9rem;
+	line-height: 1;
+	color: var(--bulma-text);
+	background-color: var(--bulma-scheme-main-ter);
+	transition: background-color 0.3s ease;
+}
+
+/* The knob covers the icon of the current theme */
+.theme-switch-knob {
+	position: absolute;
+	top: 50%;
+	left: 0.2rem;
+	width: 1.4rem;
+	height: 1.4rem;
+	border-radius: 50%;
+	background-color: var(--bulma-link);
+	transform: translateY(-50%);
+	transition: transform 0.3s ease;
+}
+
+.theme-switch input:checked + .theme-switch-track .theme-switch-knob {
+	transform: translate(calc(1.7rem - 2px), -50%);
+}
+
+.theme-switch input:focus-visible + .theme-switch-track {
+	outline: 3px solid var(--bulma-link);
+	outline-offset: 2px;
+}
+
+.theme-icon {
+	height: 1rem;
+
+	&.inverted {
+		filter: brightness(0) invert(1);
+	}
+}
+
 /* Hero */
 .page-hero {
 	color: #fff;
@@ -159,18 +224,5 @@ html {
 }
 
 .photo-badge:empty {
-	display: none;
-}
-
-/* Theme toggle: show the sun in the dark theme and the moon in the light one */
-.theme-icon-light {
-	display: none;
-}
-
-[data-theme="dark"] .theme-icon-light {
-	display: inline;
-}
-
-[data-theme="dark"] .theme-icon-dark {
 	display: none;
 }

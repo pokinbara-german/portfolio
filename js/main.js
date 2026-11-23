@@ -26,21 +26,23 @@
 		}
 	}
 
-	// ---------- Theme ----------
-
 	function applyTheme(theme) {
 		// Bulma 1.x switches palettes via the data-theme attribute
 		root.setAttribute('data-theme', theme);
+
+		// Keep the switch in sync with the active theme
+		document.getElementById('theme-toggle').checked = theme === 'dark';
 	}
 
 	function initTheme() {
+		var toggle = document.getElementById('theme-toggle');
 		var saved = readStorage('theme');
 		var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 		applyTheme(saved || (prefersDark ? 'dark' : 'light'));
 
-		document.getElementById('theme-toggle').addEventListener('click', function () {
-			var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+		toggle.addEventListener('change', function () {
+			var next = toggle.checked ? 'dark' : 'light';
 
 			applyTheme(next);
 			writeStorage('theme', next);
