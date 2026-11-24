@@ -97,7 +97,9 @@
 		});
 
 		// The button shows the language you will switch to
-		document.getElementById('lang-toggle').textContent = t('lang.switchTo');
+		document.querySelectorAll('.lang-switch-option').forEach(function (option) {
+			option.classList.toggle('is-active', option.getAttribute('data-lang') === currentLang);
+		});
 
 		updatePhotoBadges();
 		updateLightboxLabels();
@@ -229,30 +231,16 @@
 			return b.count - a.count || a.name.localeCompare(b.name);
 		});
 
-		var max = items[0].count;
-
 		items.forEach(function (item) {
 			var group = document.createElement('div');
 			var label = document.createElement('span');
-			var number = document.createElement('span');
-			var size = 'is-normal';
-
-			if (max > 1 && item.count === max) {
-				size = 'is-large';
-			} else if (item.count > 1) {
-				size = 'is-medium';
-			}
 
 			group.className = 'tags has-addons';
 
-			label.className = 'tag is-link is-light ' + size;
+			label.className = 'tag is-link is-light is-normal';
 			label.textContent = item.name;
 
-			number.className = 'tag is-link ' + size;
-			number.textContent = item.count;
-
 			group.appendChild(label);
-			group.appendChild(number);
 			container.appendChild(group);
 		});
 

@@ -28,6 +28,43 @@ html {
 	transform-origin: left;
 }
 
+/* Language switch */
+.lang-switch {
+	display: inline-flex;
+	height: 2rem;
+	padding: 0.2rem;
+	border: 1px solid var(--bulma-border);
+	border-radius: 999px;
+	font: inherit;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	line-height: 1;
+	color: var(--bulma-text);
+	background-color: var(--bulma-scheme-main-ter);
+	cursor: pointer;
+}
+
+.lang-switch-option {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2rem;
+	padding: 0 0.4rem;
+	border-radius: 999px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lang-switch-option.is-active {
+	color: var(--bulma-link-invert);
+	background-color: var(--bulma-link);
+}
+
+.lang-switch:focus-visible {
+	outline: 3px solid var(--bulma-link);
+	outline-offset: 2px;
+}
+
 /* Theme switch */
 .theme-switch {
 	position: relative;
