@@ -42,6 +42,11 @@ window.I18N.en = {
 	'project6.link': 'Live demo',
 	'project6.alt': 'NID-Report screenshot',
 
+	'project7.title': 'Lofters studio website',
+	'project7.description': 'A simple one-page website for the studio, showcasing the projects it had at the time.\n\nAdditional information about each project is displayed in Bootstrap modals. Blueimp Gallery is used to display screenshots of the 3D project.\n\nI was fully responsible for the website design, frontend development, and image selection.',
+	'project7.link': 'View archived version',
+	'project7.alt': 'Website screenshot',
+
 	// {count} is replaced with the number of extra photos
 	'gallery.more': '+{count} photos',
 
