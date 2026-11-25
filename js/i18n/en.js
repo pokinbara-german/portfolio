@@ -50,7 +50,7 @@ window.I18N.en = {
 	// {count} is replaced with the number of extra photos
 	'gallery.more': '+{count} photos',
 
-	'cloud.title': 'Technologies used',
+	'cloud.title': 'Used technologies',
 
 	// PhotoSwipe interface labels
 	'pswp.close': 'Close (Esc)',
