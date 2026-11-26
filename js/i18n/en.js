@@ -13,12 +13,12 @@ window.I18N.en = {
 	'lang.toggle': 'Switch to Russian',
 	'theme.toggle': 'Toggle dark theme',
 
-	'hero.title': 'I\'m really sorry, but it hasn\'t finished yet.',
-	'hero.subtitle': 'You can take a look at the projects that are available right now.',
-	'hero.button': 'View projects',
+	'hero.title': 'Welcome!',
+	'hero.subtitle': 'Hi, I\'m German Pokinbara, and this is my portfolio.\nHere you can take a look at some of my previous projects.\n\nSome other projects are lost to time or covered by NDAs.\nMaybe I\'ll find a way to show them in the future.\n\n',
+	'hero.button': 'Visit my GitHub',
 
 	'project1.title': 'Pattern tester',
-	'project1.description': 'This is a simple tool for testing tile pattern textures.It works directly in your browser and doesn\'t require any additional plugins.\n\nYou can change the number of tiles, rotate and scale them to see if everything looks OK or if you missed a pixel somewhere.',
+	'project1.description': 'This is a simple tool for testing tile pattern textures.\nIt works directly in your browser and doesn\'t require any additional plugins.\n\nYou can change the number of tiles, rotate and scale them to see if everything looks OK or if you missed a pixel somewhere.',
 	'project1.link': 'Live demo',
 	'project1.alt': 'Pattern tester screenshot',
 
@@ -28,12 +28,12 @@ window.I18N.en = {
 	'project2.alt': 'Social Network screenshot',
 
 	'project3.title': 'UMI site template "1C-Easy Webinar"',
-	'project3.description': 'Landing page template for UMI CMS, developed for its SaaS platform. The design was provided by 1C partners.\n\nAll blocks and images can be edited using the EiP (Edit in Place) visual editor.\nThe email template sent to users after they submit a form can also be edited using EiP, making it easier for beginners to work with.\n\nThe template is built using XSLT. Phone and email links are dynamically updated whenever the corresponding form field values change, using MutationObserver.',
+	'project3.description': 'Landing page template for UMI CMS, developed for its SaaS platform.\nThe design was provided by 1C partners.\n\nAll blocks and images can be edited using the EiP (Edit in Place) visual editor.\nThe email template sent to users after they submit a form can also be edited using EiP, making it easier for beginners to work with.\n\nThe template is built using XSLT. Phone and email links are dynamically updated whenever the corresponding form field values change, using MutationObserver.',
 	'project3.link': 'Demo site',
 	'project3.alt': '1C-Easy Webinar screenshot',
 
 	'project5.title': 'UMI site template "1C GRM"',
-	'project5.description': 'Landing page template for UMI CMS, developed for its SaaS platform. The design was provided by 1C partners.\n\nIncludes all the features of the previous template. Its key differences are a more subtle design, links to landing page sections in the header, product cards with tab-based filtering, dynamic hover effects, and a carousel implemented using Glider.js.',
+	'project5.description': 'Landing page template for UMI CMS, developed for its SaaS platform.\nThe design was provided by 1C partners.\n\nIncludes all the features of the previous template. Its key differences are a more subtle design, links to landing page sections in the header, product cards with tab-based filtering, dynamic hover effects, and a carousel implemented using Glider.js.',
 	'project5.link': 'Demo site',
 	'project5.alt': '1C GRM screenshot',
 
