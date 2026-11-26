@@ -132,14 +132,26 @@ html {
 
 /* Hero */
 .page-hero {
-	color: #fff;
+	--hero-text-color: var(--bulma-text-strong);
 	background: linear-gradient(135deg, var(--bulma-scheme-main) 0%, #1b7f8c 100%);
 }
 
 .page-hero .title,
 .page-hero .subtitle {
-	color: #fff;
+	color: var(--hero-text-color);
 	white-space: pre-line;
+}
+
+.page-hero .button.hero-button {
+	background-color: transparent;
+	border-color: var(--hero-text-color);
+	color: var(--hero-text-color);
+	transition: box-shadow 0.2s ease;
+}
+
+.page-hero .button.hero-button:hover,
+.page-hero .button.hero-button:focus-visible {
+	box-shadow: inset 0 0 0 2px var(--hero-text-color);
 }
 
 /* Hexagon cluster in the hero */
@@ -259,7 +271,6 @@ html {
 	outline-offset: 3px;
 }
 
-/* "+2 photos" badge */
 .photo-badge {
 	position: absolute;
 	right: 0.75rem;
