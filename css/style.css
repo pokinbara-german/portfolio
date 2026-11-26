@@ -308,7 +308,7 @@ html {
 	opacity: 0.75;
 }
 
-/* Fullscreen gallery style */
+/* Fullscreen gallery. Other styles in paddingFn in main.js */
 .pswp__img {
 	border-radius: 12px;
 }

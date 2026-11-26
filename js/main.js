@@ -1,14 +1,12 @@
 (function () {
 	'use strict';
 
-	var PHOTOSWIPE_URL = 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/';
-	var DEFAULT_LANG = 'en';
+	const PHOTOSWIPE_URL = 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/';
+	const DEFAULT_LANG = 'en';
 
-	var root = document.documentElement;
-	var currentLang = DEFAULT_LANG;
-	var lightbox = null;
-
-	// ---------- Storage helpers (localStorage may be unavailable) ----------
+	const root = document.documentElement;
+	let currentLang = DEFAULT_LANG;
+	let lightbox = null;
 
 	function readStorage(key) {
 		try {
@@ -22,81 +20,77 @@
 		try {
 			localStorage.setItem(key, value);
 		} catch (error) {
-			// Ignore: the choice just will not be remembered
+			// Ignore
 		}
 	}
 
 	function applyTheme(theme) {
-		// Bulma 1.x switches palettes via the data-theme attribute
+		// Bulma palettes switch
 		root.setAttribute('data-theme', theme);
 
-		// Keep the switch in sync with the active theme
 		document.getElementById('theme-toggle').checked = theme === 'dark';
 	}
 
-	function initTheme() {
-		var toggle = document.getElementById('theme-toggle');
-		var saved = readStorage('theme');
-		var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-		applyTheme(saved || (prefersDark ? 'dark' : 'light'));
-
-		toggle.addEventListener('change', function () {
-			var next = toggle.checked ? 'dark' : 'light';
-
-			applyTheme(next);
-			writeStorage('theme', next);
-		});
-	}
-
-	// ---------- Translations ----------
-
-	function t(key) {
-		var dictionary = window.I18N[currentLang] || {};
+	/**
+	 * Returns translation or key if it is not presented in translations.
+	 * @param {string} key - translation key
+	 * @returns {string}
+	 */
+	function translation(key) {
+		let dictionary = window.I18N[currentLang] || {};
 
 		return dictionary[key] !== undefined ? dictionary[key] : key;
 	}
 
+	/**
+	 * Sets counter and text for all bages.
+	 */
 	function updatePhotoBadges() {
 		document.querySelectorAll('.project-gallery').forEach(function (gallery) {
-			var badge = gallery.querySelector('.photo-badge');
-			var extra = gallery.querySelectorAll('a').length - 1;
+			const badge = gallery.querySelector('.photo-badge');
+			const extra = gallery.querySelectorAll('a').length - 1;
 
-			badge.textContent = extra > 0 ? t('gallery.more').replace('{count}', extra) : '';
+			badge.textContent = extra > 0 ? translation('gallery.more').replace('{count}', extra.toString()) : '';
 		});
 	}
 
+	/**
+	 * Sets translated texts for gallery controls.
+	 */
 	function updateLightboxLabels() {
 		if (!lightbox) {
 			return;
 		}
 
-		lightbox.options.closeTitle = t('pswp.close');
-		lightbox.options.zoomTitle = t('pswp.zoom');
-		lightbox.options.arrowPrevTitle = t('pswp.prev');
-		lightbox.options.arrowNextTitle = t('pswp.next');
-		lightbox.options.errorMsg = t('pswp.error');
+		lightbox.options.closeTitle = translation('pswp.close');
+		lightbox.options.zoomTitle = translation('pswp.zoom');
+		lightbox.options.arrowPrevTitle = translation('pswp.prev');
+		lightbox.options.arrowNextTitle = translation('pswp.next');
+		lightbox.options.errorMsg = translation('pswp.error');
 	}
 
+	/**
+	 * Sets translated strings everywhere.
+	 * @param {string} lang - alpha2 language name
+	 */
 	function applyLanguage(lang) {
 		currentLang = window.I18N[lang] ? lang : DEFAULT_LANG;
 
 		root.lang = currentLang;
-		document.title = t('meta.title');
+		document.title = translation('meta.title');
 
 		document.querySelectorAll('[data-i18n]').forEach(function (element) {
-			element.textContent = t(element.getAttribute('data-i18n'));
+			element.textContent = translation(element.getAttribute('data-i18n'));
 		});
 
 		document.querySelectorAll('[data-i18n-alt]').forEach(function (element) {
-			element.alt = t(element.getAttribute('data-i18n-alt'));
+			element.alt = translation(element.getAttribute('data-i18n-alt'));
 		});
 
 		document.querySelectorAll('[data-i18n-aria]').forEach(function (element) {
-			element.setAttribute('aria-label', t(element.getAttribute('data-i18n-aria')));
+			element.setAttribute('aria-label', translation(element.getAttribute('data-i18n-aria')));
 		});
 
-		// The button shows the language you will switch to
 		document.querySelectorAll('.lang-switch-option').forEach(function (option) {
 			option.classList.toggle('is-active', option.getAttribute('data-lang') === currentLang);
 		});
@@ -105,25 +99,38 @@
 		updateLightboxLabels();
 	}
 
+	function initTheme() {
+		const toggle = document.getElementById('theme-toggle');
+		const saved = readStorage('theme');
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+		applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+
+		toggle.addEventListener('change', function () {
+			const next = toggle.checked ? 'dark' : 'light';
+
+			applyTheme(next);
+			writeStorage('theme', next);
+		});
+	}
+
 	function initLanguage() {
-		var saved = readStorage('lang');
-		var browserLang = (navigator.language || '').slice(0, 2);
+		const saved = readStorage('lang');
+		const browserLang = (navigator.language || '').slice(0, 2);
 
 		applyLanguage(saved || (browserLang === 'ru' ? 'ru' : DEFAULT_LANG));
 
 		document.getElementById('lang-toggle').addEventListener('click', function () {
-			var next = currentLang === 'en' ? 'ru' : 'en';
+			const next = currentLang === 'en' ? 'ru' : 'en';
 
 			applyLanguage(next);
 			writeStorage('lang', next);
 		});
 	}
 
-	// ---------- Navbar burger ----------
-
 	function initBurger() {
-		var burger = document.querySelector('.navbar-burger');
-		var menu = document.getElementById(burger.getAttribute('data-target'));
+		const burger = document.querySelector('.navbar-burger');
+		const menu = document.getElementById(burger.getAttribute('data-target'));
 
 		function setOpen(isOpen) {
 			burger.classList.toggle('is-active', isOpen);
@@ -143,14 +150,12 @@
 		});
 	}
 
-	// ---------- Scroll progress bar ----------
-
 	function initScrollProgress() {
-		var bar = document.getElementById('scroll-progress-bar');
+		const bar = document.getElementById('scroll-progress-bar');
 
 		function update() {
-			var scrollable = document.documentElement.scrollHeight - window.innerHeight;
-			var progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+			const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+			const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
 
 			bar.style.transform = 'scaleX(' + Math.min(Math.max(progress, 0), 1) + ')';
 		}
@@ -161,15 +166,14 @@
 	}
 
 	/**
-	 * Every .project-gallery is a separate gallery. Only the first link is
-	 * visible, the other ones are hidden but still open in the lightbox.
+	 * Every .project-gallery is a separate gallery.
 	 * PhotoSwipe is an ES module, so it is loaded with dynamic import(),
 	 * which also works when index.html is opened from the disk.
 	 */
 	function initGallery() {
 		import(PHOTOSWIPE_URL + 'photoswipe-lightbox.esm.min.js')
 			.then(function (module) {
-				var PhotoSwipeLightbox = module.default;
+				const PhotoSwipeLightbox = module.default;
 
 				lightbox = new PhotoSwipeLightbox({
 					gallery: '.project-gallery',
@@ -196,16 +200,16 @@
 
 	/**
 	 * Collects the tags from all projects and builds one cloud.
-	 * The more projects use a technology, the bigger its tag is.
+	 * More common tags are first.
 	 */
 	function initTechCloud() {
-		var section = document.getElementById('tech-cloud');
-		var container = document.getElementById('tech-cloud-tags');
-		var counts = {};
+		const section = document.getElementById('tech-cloud');
+		const container = document.getElementById('tech-cloud-tags');
+		const counts = {};
 
 		document.querySelectorAll('.project-tags .tag').forEach(function (tag) {
-			var name = tag.textContent.trim();
-			var key = name.toLowerCase();
+			const name = tag.textContent.trim();
+			const key = name.toLowerCase();
 
 			if (!name) {
 				return;
@@ -218,7 +222,7 @@
 			counts[key].count += 1;
 		});
 
-		var items = Object.keys(counts).map(function (key) {
+		const items = Object.keys(counts).map(function (key) {
 			return counts[key];
 		});
 
@@ -232,8 +236,8 @@
 		});
 
 		items.forEach(function (item) {
-			var group = document.createElement('div');
-			var label = document.createElement('span');
+			const group = document.createElement('div');
+			const label = document.createElement('span');
 
 			group.className = 'tags has-addons';
 
@@ -249,7 +253,7 @@
 
 	// ---------- Start ----------
 
-	document.getElementById('year').textContent = new Date().getFullYear();
+	document.getElementById('year').textContent = new Date().getFullYear().toString();
 
 	initTheme();
 	initLanguage();
