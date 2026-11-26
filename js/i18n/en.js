@@ -13,6 +13,9 @@ window.I18N.en = {
 	'lang.toggle': 'Switch to Russian',
 	'theme.toggle': 'Toggle dark theme',
 
+	'gallery.more': '+{count} photos',
+	'cloud.title': 'Used technologies',
+
 	'hero.title': 'Welcome!',
 	'hero.subtitle': 'Hi, I\'m German Pokinbara, and this is my portfolio.\nHere you can take a look at some of my previous projects.\n\nSome other projects are lost to time or covered by NDAs.\nMaybe I\'ll find a way to show them in the future.\n\n',
 	'hero.button': 'Visit my GitHub',
@@ -46,11 +49,6 @@ window.I18N.en = {
 	'project7.description': 'A simple one-page website for the studio, showcasing the projects it had at the time.\n\nAdditional information about each project is displayed in Bootstrap modals. Blueimp Gallery is used to display screenshots of the 3D project.\n\nI was fully responsible for the website design, frontend development, and image selection.',
 	'project7.link': 'View archived version',
 	'project7.alt': 'Website screenshot',
-
-	// {count} is replaced with the number of extra photos
-	'gallery.more': '+{count} photos',
-
-	'cloud.title': 'Used technologies',
 
 	// PhotoSwipe interface labels
 	'pswp.close': 'Close (Esc)',
