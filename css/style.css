@@ -1,7 +1,7 @@
 /* Smooth scrolling to anchors, offset by the fixed navbar height */
 html {
 	scroll-behavior: smooth;
-	scroll-padding-top: 3.5rem;
+	scroll-padding-top: calc(var(--bulma-navbar-height, 3.25rem) - 1px);
 }
 
 @media (prefers-reduced-motion: reduce) {
