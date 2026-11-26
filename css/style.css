@@ -10,7 +10,7 @@ html {
 	}
 }
 
-/* Scroll progress bar, sits above the fixed navbar */
+/* Scroll progress bar */
 .scroll-progress {
 	position: fixed;
 	top: 0;
@@ -100,7 +100,6 @@ html {
 	transition: background-color 0.3s ease;
 }
 
-/* The knob covers the icon of the current theme */
 .theme-switch-knob {
 	position: absolute;
 	top: 50%;
@@ -163,11 +162,10 @@ html {
 	aspect-ratio: 311 / 379;
 }
 
-/* Hexagon with vertices on the left and right, height = width * 0.866 */
 .hero-hex {
 	position: absolute;
 	aspect-ratio: 1 / 0.866;
-	background-color: rgba(255, 255, 255, 0.15); /* visible until the image loads */
+	background-color: rgba(255, 255, 255, 0.15); /* in case that loading takes long time */
 	clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
@@ -180,7 +178,7 @@ html {
 	object-fit: cover;
 }
 
-/* Position and size of every hexagon, in percent of the cluster */
+/* Position and size of hexagons */
 .hero-hex-1 { left: 5.8%;  top: 6.0%;  width: 57.2%; }
 .hero-hex-2 { left: 58.2%; top: 0;    width: 36.3%; }
 .hero-hex-3 { left: 54.0%; top: 28.9%; width: 46.0%; }
@@ -188,7 +186,7 @@ html {
 .hero-hex-5 { left: 0;    top: 64.7%; width: 29.3%; }
 .hero-hex-6 { left: 23.1%; top: 79.1%; width: 29.3%; }
 
-/* Project sections: alternating background, taken from Bulma theme variables */
+/* Projects */
 .project {
 	padding-top: 4.5rem;
 	padding-bottom: 4.5rem;
@@ -205,14 +203,14 @@ html {
 	background-color: var(--bulma-scheme-main-bis);
 }
 
-/* Alternate the sides: text on the left in even projects (desktop only) */
+/* Project sides alternation for desktops */
 @media screen and (min-width: 769px) {
 	.project:nth-child(even) .columns {
 		flex-direction: row-reverse;
 	}
 }
 
-/* Main screenshot that opens the gallery */
+/* Main screenshot */
 .project-image-link {
 	position: relative;
 	display: block;
@@ -239,7 +237,7 @@ html {
 	filter: grayscale(0%);
 }
 
-/* Gallery icon: drawn as a mask, so it follows the theme text color */
+/* Gallery icon */
 .project-image-link::after {
 	content: "";
 	position: absolute;
@@ -271,6 +269,10 @@ html {
 	outline-offset: 3px;
 }
 
+.photo-badge:empty {
+	display: none;
+}
+
 .photo-badge {
 	position: absolute;
 	right: 0.75rem;
@@ -283,6 +285,7 @@ html {
 	background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* Tags */
 .tech-cloud {
 	padding-top: 3rem;
 	padding-bottom: 3rem;
@@ -305,10 +308,7 @@ html {
 	opacity: 0.75;
 }
 
+/* Fullscreen gallery. Other styles in paddingFn in main.js */
 .pswp__img {
 	border-radius: 12px;
-}
-
-.photo-badge:empty {
-	display: none;
 }
